@@ -1,0 +1,11 @@
+#!/bin/sh
+cat > /etc/log_files.yml <<EOF
+files:
+  - /${EXT_USER}.log
+hostname: dev-${EXT_HOST}
+destination:
+  host: ${PT_DEST}
+  port: ${PT_PORT}
+  protocol: tls
+EOF
+/remote_syslog/remote_syslog --no-detach=true --poll=true
