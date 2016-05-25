@@ -21,7 +21,16 @@ name the "system" (host) and "program" (logfile) in Papertrail. Docker will
 keep it running.
 
     touch ~/.pt-log
-    docker run --detach=true --name pt-log --env="EXT_USER=$(id -ng $USER)" --env="EXT_HOST=$HOSTNAME" --env="PT_DEST=logs.papertrailapp.com" --env="PT_PORT=514" --restart=always --volume="$HOME/.pt-log:/$(id -ng $USER).log" meonkeys/pt-log
+    docker run \
+      --detach=true \
+      --name pt-log \
+      --env="EXT_USER=$(id -ng $USER)" \
+      --env="EXT_HOST=$HOSTNAME" \
+      --env="PT_DEST=logs.papertrailapp.com" \
+      --env="PT_PORT=514" \
+      --restart=always \
+      --volume="$HOME/.pt-log:/$(id -ng $USER).log" \
+      meonkeys/pt-log
 
 ## Log a message to Papertrail
 
@@ -30,7 +39,17 @@ keep it running.
 ## How to debug the container
 
     touch ~/.pt-log
-    docker run --rm -it --name pt-log --env="EXT_USER=$(id -ng $USER)" --env="EXT_HOST=$HOSTNAME" --env="PT_DEST=logs.papertrailapp.com" --env="PT_PORT=514" --volume="$HOME/.pt-log:/$(id -ng $USER).log" meonkeys/pt-log /bin/sh
+    docker run \
+      --rm \
+      -it \
+      --name pt-log \
+      --env="EXT_USER=$(id -ng $USER)" \
+      --env="EXT_HOST=$HOSTNAME" \
+      --env="PT_DEST=logs.papertrailapp.com" \
+      --env="PT_PORT=514" \
+      --volume="$HOME/.pt-log:/$(id -ng $USER).log" \
+      meonkeys/pt-log \
+      /bin/sh
 
 # Copyright and License
 
