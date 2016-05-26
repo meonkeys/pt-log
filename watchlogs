@@ -1,8 +1,8 @@
 #!/bin/sh
 cat > /etc/log_files.yml <<EOF
 files:
-  - /${EXT_USER}.log
-hostname: dev-${EXT_HOST}
+  - /${EXT_USER}
+hostname: ${EXT_HOST}
 destination:
   host: ${PT_DEST}
   port: ${PT_PORT}

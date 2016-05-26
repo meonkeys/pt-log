@@ -24,7 +24,7 @@ docker run \
   --env="PT_DEST=logs.papertrailapp.com" \
   --env="PT_PORT=514" \
   --restart=always \
-  --volume="$HOME/.pt-log:/$(id -ng $USER).log" \
+  --volume="$HOME/.pt-log:/$(id -ng $USER)" \
   meonkeys/pt-log
 ```
 
@@ -46,7 +46,7 @@ docker run \
   --env="EXT_HOST=$HOSTNAME" \
   --env="PT_DEST=logs.papertrailapp.com" \
   --env="PT_PORT=514" \
-  --volume="$HOME/.pt-log:/$(id -ng $USER).log" \
+  --volume="$HOME/.pt-log:/$(id -ng $USER)" \
   meonkeys/pt-log \
   /bin/sh
 ```
