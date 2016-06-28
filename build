@@ -7,5 +7,5 @@ set -o pipefail
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 cd "$DIR"
-docker build -t meonkeys/pt-log .
+docker build --pull -t meonkeys/pt-log .
 docker push meonkeys/pt-log
