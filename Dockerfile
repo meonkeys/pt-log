@@ -11,6 +11,6 @@ RUN \
   rm SHA1SUM remote_syslog_linux_amd64.tar.gz && \
   rm -rf /var/cache/apk/*
 
-COPY watchlogs /
+COPY logit watchlogs /
 
 CMD [ "/watchlogs" ]

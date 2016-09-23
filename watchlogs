@@ -1,4 +1,7 @@
 #!/bin/sh
+
+set -o errexit
+
 cat > /etc/log_files.yml <<EOF
 files:
   - /pt-log/${EXT_USER}
@@ -8,4 +11,13 @@ destination:
   port: ${PT_PORT}
   protocol: tls
 EOF
+
+mkdir -p /pt-log
+touch "/pt-log/$EXT_USER"
+
+if [ -n "$LISTEN_PORT" ]
+then
+  nc -lk -p "$LISTEN_PORT" -e /logit &
+fi
+
 /remote_syslog/remote_syslog --no-detach=true --poll=true
