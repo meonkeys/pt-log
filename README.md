@@ -1,7 +1,5 @@
 # pt-log - local, secure log-to-Papertrail microservice
 
-[![](https://imagelayers.io/badge/meonkeys/pt-log:latest.svg)](https://imagelayers.io/?images=meonkeys/pt-log:latest 'Get your own badge on imagelayers.io')
-
 Logging to [Papertrail](https://papertrailapp.com/) usually requires a running [syslog](https://en.wikipedia.org/wiki/Syslog)-compatible server. pt-log provides a simpler interface to write a single message: one local file. Just start the container then append lines to the local file. Every line will be sent to Papertrail.
 
 Alternatively, if a `LISTEN_PORT` is specified, messages will be received via TCP over that port. **Use either a mounted file or a `LISTEN_PORT`, but not both**.
