@@ -4,7 +4,7 @@ Logging to [Papertrail](https://papertrailapp.com/) usually requires a running [
 
 Alternatively, if a `LISTEN_PORT` is specified, messages will be received via TCP over that port. **Use either a mounted file or a `LISTEN_PORT`, but not both**.
 
-The (tiny) image is based on [Alpine 3.3](http://www.alpinelinux.org/).
+The (tiny) image is based on [Alpine Linux](http://www.alpinelinux.org/).
 
 Warning: this is intended for low-throughput dev usage. Multiple simultaneous writes to the logfile could result in lost log lines.
 
