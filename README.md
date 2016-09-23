@@ -44,7 +44,6 @@ docker run \
 ### TCP port
 
 ```bash
-touch ~/.pt-log
 docker run \
   --detach=true \
   --name pt-log \
